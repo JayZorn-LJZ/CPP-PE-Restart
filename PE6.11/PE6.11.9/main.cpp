@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 
 struct c {
@@ -19,17 +20,16 @@ int main(void)
 
     int count = 0;
     c * c_a = new c [count + 1];
+    ifstream file;
+    file.open("test.txt");
 
     while (true)
-    {    
-        cout << "Please input your name: ";
-        if (!getline(cin, c_a[count].name))
+    {
+        if (!(file >> c_a[count].ct))
             break;
-        // cin.get(); // getline() 会主动将换行符从输入流中去掉，因此这里无需主动清除，“cin >>” 除外
-        cout << "Please input your c_a: ";
-        if (!(cin >> c_a[count].ct))
+        file.get();
+        if (!getline(file, c_a[count].name))
             break;
-        cin.get();
         count++;
         c_a = add_c(c_a, count);
     }
@@ -64,6 +64,7 @@ int main(void)
     else
         ;
     
+    file.close();
     delete [] c_a;
     return 0;
 }
