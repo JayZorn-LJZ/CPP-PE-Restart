@@ -11,7 +11,7 @@ int main(void)
 
     cout << "Please input two numbers in one line: ";
     cin >> x >> y;
-    while (cin && x > 0 and y > 0)
+    while (cin && x > 0 and x >)
     {
         cout << compute(x, y) << endl;
         cout << "Please input two numbers in one line: ";
