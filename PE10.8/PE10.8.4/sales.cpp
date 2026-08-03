@@ -1,6 +1,6 @@
 #include <iostream>
 #include <algorithm>  // 需要这个头文件来使用 std::swap
-#include "PE9.6.4.h"
+#include "sales.h"
 
 namespace SALES
 {
