@@ -26,7 +26,7 @@ int main()
 
         cout << "2. ---------------------------------" << endl;
 
-        cow4 = {"JayZorn", "Coding", 90.0}; // 将调用operator=运算符函数，右值被传递给一个临时变量并用于初始化，将临时变量初始化const Cow & c引用，最后进入函数块运行代码完成赋值
+        cow4 = {"JayZorn; Phil Jackson; Jack", "Coding", 90.0}; // 将调用operator=运算符函数，右值被传递给一个临时变量并用于初始化，将临时变量初始化const Cow & c引用，最后进入函数块运行代码完成赋值
         cow4.ShowCow();
         cout << Cow::getCowSize() << endl;
     }

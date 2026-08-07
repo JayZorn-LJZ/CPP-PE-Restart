@@ -3,12 +3,12 @@
 
 namespace COW
 {
-    const int name_size = 20;
     class Cow
     {
         private:
             // static int cow_size = 0; // 带有类内初始值设定项的成员必须为常量，要想使这段代码成立必须要在static后面加上const
             static int cow_size; // 不去初始值
+            enum constant {name_size = 20};
             char name[name_size];
             char * hobby;
             double weight;

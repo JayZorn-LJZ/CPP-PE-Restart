@@ -21,7 +21,8 @@ namespace COW
 
     Cow::Cow()
     {
-        strncpy(name, "None", name_size);
+        strncpy(name, "None", name_size - 1);
+        name[name_size - 1] = '\0';
         hobby = new char[1];
         hobby[0] = '\0';
         weight = 0.0;
@@ -30,7 +31,8 @@ namespace COW
 
     Cow::Cow(const Cow & c) // 复制构造函数（拷贝构造函数）只用于“初始化”新对象
     {
-        strncpy(name, c.name, name_size);
+        strncpy(name, c.name, name_size - 1);
+        name[name_size - 1] = '\0';
         copy_hobby(c.hobby);
         weight = c.weight;
         cow_size++;
@@ -38,7 +40,8 @@ namespace COW
 
     Cow::Cow(const char * nm, const char * ho, double wt)
     {
-        strncpy(name, nm, name_size);
+        strncpy(name, nm, name_size - 1);
+        name[name_size - 1] = '\0';
         copy_hobby(ho);
         weight = wt;
         cow_size++;
